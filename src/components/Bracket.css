@@ -1,0 +1,23 @@
+/* CSS to style the bracket and matchups */
+.bracket {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spacing between matchups */
+    padding: 20px;
+    border: 2px solid #ccc; /* Bracket border */
+    border-radius: 8px;
+}
+  
+.matchup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0; /* Matchup background color */
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.team {
+    width: 100px; /* Adjust width as needed */
+    text-align: center;
+}
