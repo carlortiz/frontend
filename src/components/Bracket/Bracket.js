@@ -1,11 +1,12 @@
 import React from 'react';
+import Team from '../Team/Team.js';
 import './Bracket.css';
 
-function Bracket() {
+const Bracket = () => {
     return (
       <div>
             <div className="bracket">
-                <div className="team">Placeholder</div>
+                <Team/>
             </div>
         </div>
     );

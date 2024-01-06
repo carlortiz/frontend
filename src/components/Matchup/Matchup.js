@@ -1,6 +1,6 @@
 import React from "react";
 
-function Matchup() {
+const Matchup = () => {
     return (
         <div>
         <h1>Matchup</h1>
