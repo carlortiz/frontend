@@ -10,6 +10,5 @@ const Team = () => {
     );
 }
 
-// we only have the ravens logo for now, but we will add more teams later
 
 export default Team;
