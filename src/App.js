@@ -1,16 +1,58 @@
-// App.js
 import React from 'react';
-import Bracket from './components/Bracket/Bracket';
-
-let positions = [{x: "20", y:"50"}, {x: "20", y:"90"}];
-let teams = ["bills", "steelers"];
+import './App.css'
+import bills_logo from './assets/bills_logo.webp'
+import steelers_logo from './assets/steelers_logo.webp'
 
 function App() {
   return (
     <div>
-      {positions.map((position, index) => (
-        <Bracket key={index} position={position} team={teams[index]} />
-      ))}
+      <div className="bracket bills">
+        <img src={bills_logo} className='team'></img>
+      </div>
+
+      <div className="bracket steelers">
+        <img src={steelers_logo} className='team'></img>
+      </div>
+
+      <div className="bracket chiefs">
+        <img src={bills_logo} className='team'></img>
+      </div>
+
+      <div className="bracket dolphins">
+        <img src={steelers_logo} className='team'></img>
+      </div>
+
+      <div className="bracket texans">
+        <img src={bills_logo} className='team'></img>
+      </div>
+
+      <div className="bracket browns">
+        <img src={steelers_logo} className='team'></img>
+      </div>
+
+      <div className="bracket cowboys">
+        <img src={bills_logo} className='team'></img>
+      </div>
+
+      <div className="bracket packers">
+        <img src={steelers_logo} className='team'></img>
+      </div>
+
+      <div className="bracket lions">
+        <img src={bills_logo} className='team'></img>
+      </div>
+
+      <div className="bracket rams">
+        <img src={steelers_logo} className='team'></img>
+      </div>
+
+      <div className="bracket buccaneers">
+        <img src={bills_logo} className='team'></img>
+      </div>
+
+      <div className="bracket eagles">
+        <img src={steelers_logo} className='team'></img>
+      </div>
     </div>
   );
 }
