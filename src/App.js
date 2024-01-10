@@ -1,13 +1,16 @@
-import './App.css';
+// App.js
+import React from 'react';
 import Bracket from './components/Bracket/Bracket';
-import Team from './components/Team/Team';
+
+let positions = [{x: "20", y:"50"}, {x: "20", y:"90"}];
+let teams = ["bills", "steelers"];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Bracket/>
-      </header>
+    <div>
+      {positions.map((position, index) => (
+        <Bracket key={index} position={position} team={teams[index]} />
+      ))}
     </div>
   );
 }

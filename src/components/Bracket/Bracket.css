@@ -1,28 +1,7 @@
 .bracket {
-    width: 100px;
-    height: 100px;
-    padding: 5px;
-    border: 3px solid black;
-    margin: 0;
-}
-
-.afc-wildcard {
-    position: absolute;
-    left: 3em;
-}
-
-.dolphins {
-    top: 2em;
-}
-
-.steelers {
-    top: 3em;
-}
-
-.chiefs {
-    top: 4em;
-}
-
-.bills {
-    top: 5em;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 3px solid black;
+  margin: 0;
 }
