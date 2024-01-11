@@ -1,6 +1,6 @@
 .bracket {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   padding: 5px;
   border: 3px solid black;
   margin: 0;
@@ -8,79 +8,126 @@
 }
 
 .team {
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
 }
 
 .bills {
   position: absolute;
   top: 10px;
-  left: 50px;
+  left: 200px;
 }
 
 .steelers {
   position: absolute;
-  top: 130px;
-  left: 50px;
+  top: 100px;
+  left: 200px;
 }
 
 .chiefs {
   position: absolute;
-  top: 250px;
-  left: 50px;
+  top: 230px;
+  left: 200px;
 }
 
 .dolphins {
   position: absolute;
-  top: 370px;
-  left: 50px;
+  top: 320px;
+  left: 200px;
 }
 
 .texans {
   position: absolute;
-  top: 490px;
-  left: 50px;
+  top: 450px;
+  left: 200px;
 }
 
 .browns {
   position: absolute;
-  top: 610px;
-  left: 50px;
+  top: 540px;
+  left: 200px;
 }
 
 .cowboys {
   position: absolute;
   top: 10px;
-  left: 800px;
+  left: 1150px;
 }
 
 .packers {
   position: absolute;
-  top: 130px;
-  left: 800px;
+  top: 100px;
+  left: 1150px;
 }
 
 .lions {
   position: absolute;
-  top: 250px;
-  left: 800px;
+  top: 230px;
+  left: 1150px;
 }
 
 .rams {
   position: absolute;
-  top: 370px;
-  left: 800px;
+  top: 320px;
+  left: 1150px;
 }
 
 .buccaneers {
   position: absolute;
-  top: 490px;
-  left: 800px;
+  top: 450px;
+  left: 1150px;
 }
 
 .eagles {
   position: absolute;
-  top: 610px;
-  left: 800px;
+  top: 540px;
+  left: 1150px;
 }
 
+.ravens{
+  position: absolute;
+  top: 135px;
+  left: 330px;
+}
+
+.divisionalone {
+  position: absolute;
+  top: 225px;
+  left: 330px;
+}
+
+.divisionaltwo {
+  position: absolute;
+  top: 360px;
+  left: 330px;
+}
+
+.divisionalthree {
+  position: absolute;
+  top: 450px;
+  left: 330px;
+}
+
+.niners{
+  position: absolute;
+  top: 135px;
+  left: 1010px;
+}
+
+.divisionalfour {
+  position: absolute;
+  top: 225px;
+  left: 1010px;
+}
+
+.divisionalfive {
+  position: absolute;
+  top: 360px;
+  left: 1010px;
+}
+
+.divisionalsix {
+  position: absolute;
+  top: 450px;
+  left: 1010px;
+}

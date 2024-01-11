@@ -53,6 +53,38 @@ function App() {
       <div className="bracket eagles">
         <img src={steelers_logo} className='team'></img>
       </div>
+
+      <div className="bracket ravens">
+        <img src={bills_logo} className='team'></img>
+      </div>
+
+      <div className="bracket divisionalone">
+        <img src={steelers_logo} className='team'></img>
+      </div>
+
+      <div className="bracket divisionaltwo">
+        <img src={bills_logo} className='team'></img>
+      </div>
+
+      <div className="bracket divisionalthree">
+        <img src={steelers_logo} className='team'></img>
+      </div>
+
+      <div className="bracket niners">
+        <img src={bills_logo} className='team'></img>
+      </div>
+
+      <div className="bracket divisionalfour">
+        <img src={steelers_logo} className='team'></img>
+      </div>
+
+      <div className="bracket divisionalfive">
+        <img src={bills_logo} className='team'></img>
+      </div>
+
+      <div className="bracket divisionalsix">
+        <img src={steelers_logo} className='team'></img>
+      </div>
     </div>
   );
 }
