@@ -15,103 +15,88 @@ import rams_logo from './assets/rams_logo.png'
 import texans_logo from './assets/texans_logo.avif'
 import ravens_logo from './assets/ravens_logo.jpeg'
 import superbowl_logo from './assets/superbowl_lvii.png'
+import afc_logo from './assets/afc_logo.png'
+import nfc_logo from './assets/nfc_logo.png'
 
 function App() {
   return (
     <div>
-      <div className="bracket bills">
-        <img src={bills_logo} className='team'></img>
+      <div className="bracket afc_wildcard_seed_2">
+        <img src={bills_logo} className="team" ></img>
       </div>
 
-      <div className="bracket steelers">
+      <div className="bracket afc_wildcard_seed_7">
         <img src={steelers_logo} className='team'></img>
       </div>
 
-      <div className="bracket chiefs">
+      <div className="bracket afc_wildcard_seed_3">
         <img src={chiefs_logo} className='team'></img>
       </div>
 
-      <div className="bracket dolphins">
+      <div className="bracket afc_wildcard_seed_6">
         <img src={dolphins_logo} className='team'></img>
       </div>
 
-      <div className="bracket texans">
+      <div className="bracket afc_wildcard_seed_4">
         <img src={texans_logo} className='team'></img>
       </div>
 
-      <div className="bracket browns">
+      <div className="bracket afc_wildcard_seed_5">
         <img src={browns_logo} className='team'></img>
       </div>
 
-      <div className="bracket cowboys">
+      <div className="bracket nfc_wildcard_seed_2">
         <img src={cowboys_logo} className='team'></img>
       </div>
 
-      <div className="bracket packers">
+      <div className="bracket nfc_wildcard_seed_7">
         <img src={packers_logo} className='team'></img>
       </div>
 
-      <div className="bracket lions">
+      <div className="bracket nfc_wildcard_seed_3">
         <img src={lions_logo} className='team'></img>
       </div>
 
-      <div className="bracket rams">
+      <div className="bracket nfc_wildcard_seed_6">
         <img src={rams_logo} className='team'></img>
       </div>
 
-      <div className="bracket buccaneers">
+      <div className="bracket nfc_wildcard_seed_4">
         <img src={buccaneers_logo} className='team'></img>
       </div>
 
-      <div className="bracket eagles">
+      <div className="bracket nfc_wildcard_seed_5">
         <img src={eagles_logo} className='team'></img>
       </div>
 
-      <div className="bracket ravens">
+      <div className="bracket afc_divisional_seed_1">
         <img src={ravens_logo} className='team'></img>
       </div>
 
-      <div className="bracket divisionalone">
-      </div>
+      <div className="bracket afc_divisional_seed_2"></div>
+      <div className="bracket afc_divisional_seed_3"></div>
+      <div className="bracket afc_divisional_seed_4"></div>
 
-      <div className="bracket divisionaltwo">
-      </div>
-
-      <div className="bracket divisionalthree">
-      </div>
-
-      <div className="bracket niners">
+      <div className="bracket nfc_divisional_seed_1">
         <img src={niners_logo} className='team'></img>
       </div>
 
-      <div className="bracket divisionalfour">
-      </div>
+      <div className="bracket nfc_divisional_seed_2"></div>
+      <div className="bracket nfc_divisional_seed_3"></div>
+      <div className="bracket nfc_divisional_seed_4"></div>
 
-      <div className="bracket divisionalfive">
-      </div>
+      <div className="bracket afc_conference_seed_1"></div>
+      <div className="bracket afc_conference_seed_2"></div>
+      <div className="bracket nfc_conference_seed_1"></div>
+      <div className="bracket nfc_conference_seed_2"></div>
 
-      <div className="bracket divisionalsix">
-      </div>
+      <div className="bracket afc_champion"></div>
+      <div className="bracket nfc_champion"></div>
+      <div className="bracket super_bowl_champion"></div>
 
-      <div className="bracket conferenceone">
-      </div>
-
-      <div className="bracket conferencetwo">
-      </div>
-
-      <div className="bracket conferencethree">
-      </div>
-
-      <div className="bracket conferencefour">
-      </div>
-
-      <div className="bracket superbowlone">
-      </div>
-
-      <div className="bracket superbowltwo">
-      </div>
-
-      <img src={superbowl_logo} className='superbowllogo'></img>
+      <img src={superbowl_logo} className='super_bowl_logo'></img>
+      <img src={afc_logo} className='afc_logo'></img>
+      <img src={nfc_logo} className='nfc_logo'></img>
     </div>
   );
 }

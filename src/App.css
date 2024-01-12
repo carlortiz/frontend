@@ -12,166 +12,190 @@
   width: 70px;
 }
 
-.bills {
+.afc_wildcard_seed_2 {
   position: absolute;
   top: 10px;
   left: 200px;
 }
 
-.steelers {
+.afc_wildcard_seed_7 {
   position: absolute;
   top: 100px;
   left: 200px;
 }
 
-.chiefs {
+.afc_wildcard_seed_3 {
   position: absolute;
   top: 230px;
   left: 200px;
 }
 
-.dolphins {
+.afc_wildcard_seed_6 {
   position: absolute;
   top: 320px;
   left: 200px;
 }
 
-.texans {
+.afc_wildcard_seed_4 {
   position: absolute;
   top: 450px;
   left: 200px;
 }
 
-.browns {
+.afc_wildcard_seed_5 {
   position: absolute;
   top: 540px;
   left: 200px;
 }
 
-.cowboys {
+.nfc_wildcard_seed_2 {
   position: absolute;
   top: 10px;
   left: 1150px;
 }
 
-.packers {
+.nfc_wildcard_seed_7 {
   position: absolute;
   top: 100px;
   left: 1150px;
 }
 
-.lions {
+.nfc_wildcard_seed_3 {
   position: absolute;
   top: 230px;
   left: 1150px;
 }
 
-.rams {
+.nfc_wildcard_seed_6 {
   position: absolute;
   top: 320px;
   left: 1150px;
 }
 
-.buccaneers {
+.nfc_wildcard_seed_4 {
   position: absolute;
   top: 450px;
   left: 1150px;
 }
 
-.eagles {
+.nfc_wildcard_seed_5 {
   position: absolute;
   top: 540px;
   left: 1150px;
 }
 
-.ravens{
+.afc_divisional_seed_1{
   position: absolute;
   top: 135px;
   left: 330px;
 }
 
-.divisionalone {
+.afc_divisional_seed_2 {
   position: absolute;
   top: 225px;
   left: 330px;
 }
 
-.divisionaltwo {
+.afc_divisional_seed_3 {
   position: absolute;
   top: 360px;
   left: 330px;
 }
 
-.divisionalthree {
+.afc_divisional_seed_4 {
   position: absolute;
   top: 450px;
   left: 330px;
 }
 
-.niners{
+.nfc_divisional_seed_1 {
   position: absolute;
   top: 135px;
   left: 1010px;
 }
 
-.divisionalfour {
+.nfc_divisional_seed_2 {
   position: absolute;
   top: 225px;
   left: 1010px;
 }
 
-.divisionalfive {
+.nfc_divisional_seed_3 {
   position: absolute;
   top: 360px;
   left: 1010px;
 }
 
-.divisionalsix {
+.nfc_divisional_seed_4 {
   position: absolute;
   top: 450px;
   left: 1010px;
 }
 
-.conferenceone {
+.afc_conference_seed_1 {
   position: absolute;
   top: 260px;
   left: 460px;
 }
 
-.conferencetwo {
+.afc_conference_seed_2 {
   position: absolute;
   top: 350px;
   left: 460px;
 }
 
-.conferencethree {
+.nfc_conference_seed_1 {
   position: absolute;
   top: 260px;
   left: 870px;
 }
 
-.conferencefour {
+.nfc_conference_seed_2 {
   position: absolute;
   top: 350px;
   left: 870px;
 }
 
-.superbowlone {
+.afc_champion {
   position: absolute;
   top: 260px;
   left: 665px;
 }
 
-.superbowltwo {
+.nfc_champion {
   position: absolute;
   top: 350px;
   left: 665px;
 }
 
-.superbowllogo {
+.super_bowl_champion {
+  position: absolute;
+  top: 475px;
+  left: 628px;
+  width: 150px;
+  height: 150px;
+}
+
+.super_bowl_logo {
   position: absolute;
   top: 0px;
   left: 560px;
   width: 288px;
   height: 213px
+}
+
+.afc_logo {
+  position: absolute;
+  top: 275px;
+  left: 20px;
+  width: 120px;
+  height: 86px
+}
+
+.nfc_logo {
+  position: absolute;
+  top: 275px;
+  left: 1300px;
+  width: 122px;
+  height: 92px
 }
