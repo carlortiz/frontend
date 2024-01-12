@@ -131,3 +131,47 @@
   top: 450px;
   left: 1010px;
 }
+
+.conferenceone {
+  position: absolute;
+  top: 260px;
+  left: 460px;
+}
+
+.conferencetwo {
+  position: absolute;
+  top: 350px;
+  left: 460px;
+}
+
+.conferencethree {
+  position: absolute;
+  top: 260px;
+  left: 870px;
+}
+
+.conferencefour {
+  position: absolute;
+  top: 350px;
+  left: 870px;
+}
+
+.superbowlone {
+  position: absolute;
+  top: 260px;
+  left: 665px;
+}
+
+.superbowltwo {
+  position: absolute;
+  top: 350px;
+  left: 665px;
+}
+
+.superbowllogo {
+  position: absolute;
+  top: 0px;
+  left: 560px;
+  width: 288px;
+  height: 213px
+}
