@@ -19,14 +19,38 @@ import afc_logo from './assets/afc_logo.png'
 import nfc_logo from './assets/nfc_logo.png'
 
 function App() {
+  const handleBracketClick = (event) => {
+
+    //   special case: wildcard round matchup
+    //   we need all three winners
+    //     the lowest goes against the bye team
+    //     the other two go head to head, matching the bracket flow
+
+    const clickedBracket = event.currentTarget;
+
+    if (clickedBracket.className.includes("wildcard")) {
+      
+    } else {
+      const imgTag = clickedBracket.querySelector('.team');
+      const imgClone = imgTag.cloneNode(true);
+      const newBracket = document.getElementsByClassName('afc_conference_seed_1');
+      console.log(newBracket[0]);
+      newBracket[0].appendChild(imgClone);
+
+      // think carefully about the test cases and logic. division_seed_1 and 2 should only go to afc_1. 
+      // implement logic to account for every test case.
+    }
+
+  };
+
   return (
     <div>
-      <div className="bracket afc_wildcard_seed_2">
-        <img src={bills_logo} className="team" ></img>
+      <div className="bracket afc_wildcard_seed_2" onClick={handleBracketClick}>
+        <img src={bills_logo} className="team"></img>
       </div>
 
-      <div className="bracket afc_wildcard_seed_7">
-        <img src={steelers_logo} className='team'></img>
+      <div className="bracket afc_wildcard_seed_7" onClick={handleBracketClick}>
+        <img src={steelers_logo} className="team"></img>
       </div>
 
       <div className="bracket afc_wildcard_seed_3">
@@ -69,7 +93,7 @@ function App() {
         <img src={eagles_logo} className='team'></img>
       </div>
 
-      <div className="bracket afc_divisional_seed_1">
+      <div className="bracket afc_divisional_seed_1" onClick={handleBracketClick}>
         <img src={ravens_logo} className='team'></img>
       </div>
 

@@ -5,6 +5,7 @@
   border: 3px solid black;
   margin: 0;
   position: absolute;
+  cursor: pointer;
 }
 
 .team {
