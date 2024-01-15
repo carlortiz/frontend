@@ -19,95 +19,184 @@ import afc_logo from './assets/afc_logo.png'
 import nfc_logo from './assets/nfc_logo.png'
 
 function App() {
-  const handleBracketClick = (event) => {
 
-    //   special case: wildcard round matchup
-    //   we need all three winners
-    //     the lowest goes against the bye team
-    //     the other two go head to head, matching the bracket flow
+  // getTeamImage
+  const getTeamImage = (bracket) => {
+    const imageTag = bracket.querySelector('.team');
+    const imageClone = imageTag.cloneNode(true);
+    return imageClone;
+  }
 
+  const getNewBracket = (bracket, currentClassName, newClassName) => {
+    if (bracket.className.includes(currentClassName))
+      return document.getElementsByClassName(newClassName);
+  }
+  
+  const advanceTeam = (newBracket, image) => {
+    if (!(newBracket[0].querySelector('img')))
+      console.log("We just found out that the AFC conference seed 1 is empty.")
+      newBracket[0].appendChild(image);
+  }
+
+  const handleWildCardClick = (event) => {
     const clickedBracket = event.currentTarget;
+    let teamImage = getTeamImage(clickedBracket);
 
-    if (clickedBracket.className.includes("wildcard")) {
-      
-    } else {
-      const imgTag = clickedBracket.querySelector('.team');
-      const imgClone = imgTag.cloneNode(true);
-      const newBracket = document.getElementsByClassName('afc_conference_seed_1');
-      console.log(newBracket[0]);
-      newBracket[0].appendChild(imgClone);
-
-      // think carefully about the test cases and logic. division_seed_1 and 2 should only go to afc_1. 
-      // implement logic to account for every test case.
+    if (clickedBracket.className.includes("afc_wildcard_seed_1") || 
+        clickedBracket.className.includes("afc_wildcard_seed_3"))
+    {
+      let newBracket = document.getElementsByClassName('afc_divisional_seed_3');
+      if (newBracket[0].querySelector('img')) 
+        newBracket = document.getElementsByClassName('afc_divisional_seed_4');
+      advanceTeam(newBracket[0], teamImage);
     }
 
+    if (clickedBracket.className.includes("afc_wildcard_seed_2"))
+    {
+      let newBracket = document.getElementsByClassName('afc_divisional_seed_2');
+      advanceTeam(newBracket[0], teamImage);
+    }
+
+    if (clickedBracket.className.includes("afc_wildcard_seed_5") || 
+        clickedBracket.className.includes("afc_wildcard_seed_6"))
+    {
+      let newBracket = document.getElementsByClassName('afc_divisional_seed_2');
+      if (newBracket[0].querySelector('img'))
+        newBracket = document.getElementsByClassName('afc_divisional_seed_4');
+        advanceTeam(newBracket[0], teamImage);
+    }
+
+    if (clickedBracket.className.includes("afc_wildcard_seed_4"))
+    {
+      let newBracket = document.getElementsByClassName('afc_divisional_seed_2');
+      advanceTeam(newBracket[0], teamImage);
+    }
+    
+    if (clickedBracket.className.includes("nfc_wildcard_seed_1") || 
+        clickedBracket.className.includes("nfc_wildcard_seed_3"))
+    {
+      let newBracket = document.getElementsByClassName('nfc_divisional_seed_3');
+      if (newBracket[0].querySelector('img')) 
+        newBracket = document.getElementsByClassName('nfc_divisional_seed_4');
+      advanceTeam(newBracket[0], teamImage);
+    }
+
+    if (clickedBracket.className.includes("nfc_wildcard_seed_2"))
+    {
+      let newBracket = document.getElementsByClassName('nfc_divisional_seed_2');
+      advanceTeam(newBracket[0], teamImage);
+    }
+    
+    if (clickedBracket.className.includes("nfc_wildcard_seed_5") || 
+        clickedBracket.className.includes("nfc_wildcard_seed_6"))
+    {
+      let newBracket = document.getElementsByClassName('nfc_divisional_seed_2');
+      if (newBracket[0].querySelector('img'))
+        newBracket = document.getElementsByClassName('nfc_divisional_seed_4');
+        advanceTeam(newBracket[0], teamImage);
+    }
+
+    if (clickedBracket.className.includes("nfc_wildcard_seed_4"))
+    {
+      let newBracket = document.getElementsByClassName('nfc_divisional_seed_2');
+      advanceTeam(newBracket[0], teamImage);
+    }
+  };
+
+  const handleNonWildCardClick = (event) => {
+    const clickedBracket = event.currentTarget;
+    let teamImage = getTeamImage(clickedBracket);
+
+    // WORK ON THIS BELOW.
+    // declare a variable for current and new seed and create the logic from there.
+    // then, you only have to getNewBracket once and advanceteam once.
+    
+    let newBracket = getNewBracket(clickedBracket, "afc_divisional_seed_1",       "afc_conference_seed_1")
+    console.log("We have the new bracket now.");
+    advanceTeam(newBracket, teamImage);
+
+    //newBracket = getNewBracket(clickedBracket, "afc_divisional_seed_2",       "afc_conference_seed_1")
+    //advanceTeam(newBracket, teamImage);
+
+    // winner of NFC divisional_seed_1 vs. divisional_seed_2
+
+    // winner of NFC divisional_seed_3 vs. divisional_seed_4
+
+    // winner of AFC conference_seed_1 vs. conference_seed_2
+
+    // winner of NFC conference_seed_1 vs. conference_seed_2
+
+    // winner of AFC champion vs. NFC champion
+
+    // think carefully about the test cases and logic. division_seed_1 and 2 should only go to afc_1. 
+    // implement logic to account for every test case.
   };
 
   return (
     <div>
-      <div className="bracket afc_wildcard_seed_2" onClick={handleBracketClick}>
+      <div className="bracket afc_wildcard_seed_1" onClick={handleWildCardClick}>
         <img src={bills_logo} className="team"></img>
       </div>
 
-      <div className="bracket afc_wildcard_seed_7" onClick={handleBracketClick}>
+      <div className="bracket afc_wildcard_seed_2" onClick={handleWildCardClick}>
         <img src={steelers_logo} className="team"></img>
       </div>
 
-      <div className="bracket afc_wildcard_seed_3">
+      <div className="bracket afc_wildcard_seed_3" onClick={handleWildCardClick}>
         <img src={chiefs_logo} className='team'></img>
       </div>
 
-      <div className="bracket afc_wildcard_seed_6">
+      <div className="bracket afc_wildcard_seed_4" onClick={handleWildCardClick}>
         <img src={dolphins_logo} className='team'></img>
       </div>
 
-      <div className="bracket afc_wildcard_seed_4">
+      <div className="bracket afc_wildcard_seed_5" onClick={handleWildCardClick}>
         <img src={texans_logo} className='team'></img>
       </div>
 
-      <div className="bracket afc_wildcard_seed_5">
+      <div className="bracket afc_wildcard_seed_6" onClick={handleWildCardClick}>
         <img src={browns_logo} className='team'></img>
       </div>
 
-      <div className="bracket nfc_wildcard_seed_2">
+      <div className="bracket nfc_wildcard_seed_1" onClick={handleWildCardClick}>
         <img src={cowboys_logo} className='team'></img>
       </div>
 
-      <div className="bracket nfc_wildcard_seed_7">
+      <div className="bracket nfc_wildcard_seed_2" onClick={handleWildCardClick}>
         <img src={packers_logo} className='team'></img>
       </div>
 
-      <div className="bracket nfc_wildcard_seed_3">
+      <div className="bracket nfc_wildcard_seed_3" onClick={handleWildCardClick}>
         <img src={lions_logo} className='team'></img>
       </div>
 
-      <div className="bracket nfc_wildcard_seed_6">
+      <div className="bracket nfc_wildcard_seed_4" onClick={handleWildCardClick}>
         <img src={rams_logo} className='team'></img>
       </div>
 
-      <div className="bracket nfc_wildcard_seed_4">
+      <div className="bracket nfc_wildcard_seed_5" onClick={handleWildCardClick}>
         <img src={buccaneers_logo} className='team'></img>
       </div>
 
-      <div className="bracket nfc_wildcard_seed_5">
+      <div className="bracket nfc_wildcard_seed_6" onClick={handleWildCardClick}>
         <img src={eagles_logo} className='team'></img>
       </div>
 
-      <div className="bracket afc_divisional_seed_1" onClick={handleBracketClick}>
+      <div className="bracket afc_divisional_seed_1" onClick={handleNonWildCardClick}>
         <img src={ravens_logo} className='team'></img>
       </div>
 
-      <div className="bracket afc_divisional_seed_2"></div>
-      <div className="bracket afc_divisional_seed_3"></div>
-      <div className="bracket afc_divisional_seed_4"></div>
+      <div className="bracket afc_divisional_seed_2" onClick={handleNonWildCardClick}></div>
+      <div className="bracket afc_divisional_seed_3" onClick={handleNonWildCardClick}></div>
+      <div className="bracket afc_divisional_seed_4" onClick={handleNonWildCardClick}></div>
 
-      <div className="bracket nfc_divisional_seed_1">
+      <div className="bracket nfc_divisional_seed_1" onClick={handleNonWildCardClick}>
         <img src={niners_logo} className='team'></img>
       </div>
 
-      <div className="bracket nfc_divisional_seed_2"></div>
-      <div className="bracket nfc_divisional_seed_3"></div>
-      <div className="bracket nfc_divisional_seed_4"></div>
+      <div className="bracket nfc_divisional_seed_2" onClick={handleNonWildCardClick}></div>
+      <div className="bracket nfc_divisional_seed_3" onClick={handleNonWildCardClick}></div>
+      <div className="bracket nfc_divisional_seed_4" onClick={handleNonWildCardClick}></div>
 
       <div className="bracket afc_conference_seed_1"></div>
       <div className="bracket afc_conference_seed_2"></div>
