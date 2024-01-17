@@ -173,19 +173,6 @@ function App() {
       teamImage.classList.add('team_champion_image');
       advanceTeam(newBracket, teamImage);
     }
-
-    // winner of NFC divisional_seed_1 vs. divisional_seed_2
-
-    // winner of NFC divisional_seed_3 vs. divisional_seed_4
-
-    // winner of AFC conference_seed_1 vs. conference_seed_2
-
-    // winner of NFC conference_seed_1 vs. conference_seed_2
-
-    // winner of AFC champion vs. NFC champion
-
-    // think carefully about the test cases and logic. division_seed_1 and 2 should only go to afc_1. 
-    // implement logic to account for every test case.
   };
 
   return (
