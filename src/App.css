@@ -185,6 +185,11 @@
   height: 213px
 }
 
+.team_champion_image {
+  width: 150px;
+  height: 150px;
+}
+
 .afc_logo {
   position: absolute;
   top: 275px;

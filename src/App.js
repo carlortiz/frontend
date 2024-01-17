@@ -26,15 +26,9 @@ function App() {
     const imageClone = imageTag.cloneNode(true);
     return imageClone;
   }
-
-  const getNewBracket = (bracket, currentClassName, newClassName) => {
-    if (bracket.className.includes(currentClassName))
-      return document.getElementsByClassName(newClassName);
-  }
   
   const advanceTeam = (newBracket, image) => {
     if (!(newBracket[0].querySelector('img')))
-      console.log("We just found out that the AFC conference seed 1 is empty.")
       newBracket[0].appendChild(image);
   }
 
@@ -48,13 +42,13 @@ function App() {
       let newBracket = document.getElementsByClassName('afc_divisional_seed_3');
       if (newBracket[0].querySelector('img')) 
         newBracket = document.getElementsByClassName('afc_divisional_seed_4');
-      advanceTeam(newBracket[0], teamImage);
+      advanceTeam(newBracket, teamImage);
     }
 
     if (clickedBracket.className.includes("afc_wildcard_seed_2"))
     {
       let newBracket = document.getElementsByClassName('afc_divisional_seed_2');
-      advanceTeam(newBracket[0], teamImage);
+      advanceTeam(newBracket, teamImage);
     }
 
     if (clickedBracket.className.includes("afc_wildcard_seed_5") || 
@@ -63,13 +57,13 @@ function App() {
       let newBracket = document.getElementsByClassName('afc_divisional_seed_2');
       if (newBracket[0].querySelector('img'))
         newBracket = document.getElementsByClassName('afc_divisional_seed_4');
-        advanceTeam(newBracket[0], teamImage);
+        advanceTeam(newBracket, teamImage);
     }
 
     if (clickedBracket.className.includes("afc_wildcard_seed_4"))
     {
       let newBracket = document.getElementsByClassName('afc_divisional_seed_2');
-      advanceTeam(newBracket[0], teamImage);
+      advanceTeam(newBracket, teamImage);
     }
     
     if (clickedBracket.className.includes("nfc_wildcard_seed_1") || 
@@ -78,13 +72,13 @@ function App() {
       let newBracket = document.getElementsByClassName('nfc_divisional_seed_3');
       if (newBracket[0].querySelector('img')) 
         newBracket = document.getElementsByClassName('nfc_divisional_seed_4');
-      advanceTeam(newBracket[0], teamImage);
+      advanceTeam(newBracket, teamImage);
     }
 
     if (clickedBracket.className.includes("nfc_wildcard_seed_2"))
     {
       let newBracket = document.getElementsByClassName('nfc_divisional_seed_2');
-      advanceTeam(newBracket[0], teamImage);
+      advanceTeam(newBracket, teamImage);
     }
     
     if (clickedBracket.className.includes("nfc_wildcard_seed_5") || 
@@ -93,13 +87,13 @@ function App() {
       let newBracket = document.getElementsByClassName('nfc_divisional_seed_2');
       if (newBracket[0].querySelector('img'))
         newBracket = document.getElementsByClassName('nfc_divisional_seed_4');
-        advanceTeam(newBracket[0], teamImage);
+        advanceTeam(newBracket, teamImage);
     }
 
     if (clickedBracket.className.includes("nfc_wildcard_seed_4"))
     {
       let newBracket = document.getElementsByClassName('nfc_divisional_seed_2');
-      advanceTeam(newBracket[0], teamImage);
+      advanceTeam(newBracket, teamImage);
     }
   };
 
@@ -110,13 +104,76 @@ function App() {
     // WORK ON THIS BELOW.
     // declare a variable for current and new seed and create the logic from there.
     // then, you only have to getNewBracket once and advanceteam once.
-    
-    let newBracket = getNewBracket(clickedBracket, "afc_divisional_seed_1",       "afc_conference_seed_1")
-    console.log("We have the new bracket now.");
-    advanceTeam(newBracket, teamImage);
 
-    //newBracket = getNewBracket(clickedBracket, "afc_divisional_seed_2",       "afc_conference_seed_1")
-    //advanceTeam(newBracket, teamImage);
+    if (clickedBracket.className.includes("afc_divisional_seed_1"))
+    {
+      let newBracket = document.getElementsByClassName('afc_conference_seed_1');
+      advanceTeam(newBracket, teamImage);
+    }
+
+    if (clickedBracket.className.includes("afc_divisional_seed_2"))
+    {
+      let newBracket = document.getElementsByClassName('afc_conference_seed_1');
+      advanceTeam(newBracket, teamImage);
+    }
+
+    if (clickedBracket.className.includes("afc_divisional_seed_3"))
+    {
+      let newBracket = document.getElementsByClassName('afc_conference_seed_2');
+      advanceTeam(newBracket, teamImage);
+    }
+
+    if (clickedBracket.className.includes("afc_divisional_seed_4"))
+    {
+      let newBracket = document.getElementsByClassName('afc_conference_seed_2');
+      advanceTeam(newBracket, teamImage);
+    }
+
+    if (clickedBracket.className.includes("nfc_divisional_seed_1"))
+    {
+      let newBracket = document.getElementsByClassName('nfc_conference_seed_1');
+      advanceTeam(newBracket, teamImage);
+    }
+
+    if (clickedBracket.className.includes("nfc_divisional_seed_2"))
+    {
+      let newBracket = document.getElementsByClassName('nfc_conference_seed_1');
+      advanceTeam(newBracket, teamImage);
+    }
+
+    if (clickedBracket.className.includes("nfc_divisional_seed_3"))
+    {
+      let newBracket = document.getElementsByClassName('nfc_conference_seed_2');
+      advanceTeam(newBracket, teamImage);
+    }
+
+    if (clickedBracket.className.includes("nfc_divisional_seed_4"))
+    {
+      let newBracket = document.getElementsByClassName('nfc_conference_seed_2');
+      advanceTeam(newBracket, teamImage);
+    }
+
+    if (clickedBracket.className.includes("afc_conference_seed_1") ||
+        clickedBracket.className.includes("afc_conference_seed_2"))
+    {
+      let newBracket = document.getElementsByClassName('afc_champion');
+      advanceTeam(newBracket, teamImage);
+    }
+
+    if (clickedBracket.className.includes("nfc_conference_seed_1") ||
+        clickedBracket.className.includes("nfc_conference_seed_2"))
+    {
+      let newBracket = document.getElementsByClassName('nfc_champion');
+      advanceTeam(newBracket, teamImage);
+    }
+
+    if (clickedBracket.className.includes("afc_champion") ||
+        clickedBracket.className.includes("nfc_champion"))
+    {
+      let newBracket = document.getElementsByClassName('super_bowl_champion');
+      teamImage.classList.add('team_champion_image');
+      advanceTeam(newBracket, teamImage);
+    }
 
     // winner of NFC divisional_seed_1 vs. divisional_seed_2
 
@@ -198,13 +255,13 @@ function App() {
       <div className="bracket nfc_divisional_seed_3" onClick={handleNonWildCardClick}></div>
       <div className="bracket nfc_divisional_seed_4" onClick={handleNonWildCardClick}></div>
 
-      <div className="bracket afc_conference_seed_1"></div>
-      <div className="bracket afc_conference_seed_2"></div>
-      <div className="bracket nfc_conference_seed_1"></div>
-      <div className="bracket nfc_conference_seed_2"></div>
+      <div className="bracket afc_conference_seed_1" onClick={handleNonWildCardClick}></div>
+      <div className="bracket afc_conference_seed_2" onClick={handleNonWildCardClick}></div>
+      <div className="bracket nfc_conference_seed_1" onClick={handleNonWildCardClick}></div>
+      <div className="bracket nfc_conference_seed_2" onClick={handleNonWildCardClick}></div>
 
-      <div className="bracket afc_champion"></div>
-      <div className="bracket nfc_champion"></div>
+      <div className="bracket afc_champion" onClick={handleNonWildCardClick}></div>
+      <div className="bracket nfc_champion" onClick={handleNonWildCardClick}></div>
       <div className="bracket super_bowl_champion"></div>
 
       <img src={superbowl_logo} className='super_bowl_logo'></img>
