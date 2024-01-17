@@ -20,7 +20,6 @@ import nfc_logo from './assets/nfc_logo.png'
 
 function App() {
 
-  // getTeamImage
   const getTeamImage = (bracket) => {
     const imageTag = bracket.querySelector('.team');
     const imageClone = imageTag.cloneNode(true);
