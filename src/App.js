@@ -169,17 +169,18 @@ function App() {
     if (clickedBracket.className.includes("afc_champion") ||
         clickedBracket.className.includes("nfc_champion"))
     {
-      let newBracket = document.getElementsByClassName('super_bowl_champion');
-      teamImage.classList.add('team_champion_image');
+      let newBracket = document.getElementsByClassName('superbowl_champion');
+      teamImage.classList.add('team_champion');
       advanceTeam(newBracket, teamImage);
     }
-
-    // github test
-    // github contribution test
   };
 
   return (
     <div>
+      <img src={superbowl_logo} className='superbowl_logo'></img>
+      <img src={afc_logo} className='afc_logo'></img>
+      <img src={nfc_logo} className='nfc_logo'></img>
+
       <div className="bracket afc_wildcard_seed_1" onClick={handleWildCardClick}>
         <img src={bills_logo} className="team"></img>
       </div>
@@ -203,6 +204,19 @@ function App() {
       <div className="bracket afc_wildcard_seed_6" onClick={handleWildCardClick}>
         <img src={browns_logo} className='team'></img>
       </div>
+
+      <div className="bracket afc_divisional_seed_1" onClick={handleNonWildCardClick}>
+        <img src={ravens_logo} className='team'></img>
+      </div>
+
+      <div className="bracket afc_divisional_seed_2" onClick={handleNonWildCardClick}></div>
+      <div className="bracket afc_divisional_seed_3" onClick={handleNonWildCardClick}></div>
+      <div className="bracket afc_divisional_seed_4" onClick={handleNonWildCardClick}></div>
+
+      <div className="bracket afc_conference_seed_1" onClick={handleNonWildCardClick}></div>
+      <div className="bracket afc_conference_seed_2" onClick={handleNonWildCardClick}></div>
+
+      <div className="bracket afc_champion" onClick={handleNonWildCardClick}></div>
 
       <div className="bracket nfc_wildcard_seed_1" onClick={handleWildCardClick}>
         <img src={cowboys_logo} className='team'></img>
@@ -228,14 +242,6 @@ function App() {
         <img src={eagles_logo} className='team'></img>
       </div>
 
-      <div className="bracket afc_divisional_seed_1" onClick={handleNonWildCardClick}>
-        <img src={ravens_logo} className='team'></img>
-      </div>
-
-      <div className="bracket afc_divisional_seed_2" onClick={handleNonWildCardClick}></div>
-      <div className="bracket afc_divisional_seed_3" onClick={handleNonWildCardClick}></div>
-      <div className="bracket afc_divisional_seed_4" onClick={handleNonWildCardClick}></div>
-
       <div className="bracket nfc_divisional_seed_1" onClick={handleNonWildCardClick}>
         <img src={niners_logo} className='team'></img>
       </div>
@@ -244,18 +250,12 @@ function App() {
       <div className="bracket nfc_divisional_seed_3" onClick={handleNonWildCardClick}></div>
       <div className="bracket nfc_divisional_seed_4" onClick={handleNonWildCardClick}></div>
 
-      <div className="bracket afc_conference_seed_1" onClick={handleNonWildCardClick}></div>
-      <div className="bracket afc_conference_seed_2" onClick={handleNonWildCardClick}></div>
       <div className="bracket nfc_conference_seed_1" onClick={handleNonWildCardClick}></div>
       <div className="bracket nfc_conference_seed_2" onClick={handleNonWildCardClick}></div>
 
-      <div className="bracket afc_champion" onClick={handleNonWildCardClick}></div>
       <div className="bracket nfc_champion" onClick={handleNonWildCardClick}></div>
-      <div className="bracket super_bowl_champion"></div>
 
-      <img src={superbowl_logo} className='super_bowl_logo'></img>
-      <img src={afc_logo} className='afc_logo'></img>
-      <img src={nfc_logo} className='nfc_logo'></img>
+      <div className="bracket superbowl_champion"></div>
     </div>
   );
 }

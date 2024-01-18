@@ -13,6 +13,30 @@
   width: 70px;
 }
 
+.superbowl_logo {
+  position: absolute;
+  top: 0px;
+  left: 560px;
+  width: 288px;
+  height: 213px
+}
+
+.afc_logo {
+  position: absolute;
+  top: 275px;
+  left: 20px;
+  width: 120px;
+  height: 86px
+}
+
+.nfc_logo {
+  position: absolute;
+  top: 275px;
+  left: 1300px;
+  width: 122px;
+  height: 92px
+}
+
 .afc_wildcard_seed_1 {
   position: absolute;
   top: 10px;
@@ -47,6 +71,48 @@
   position: absolute;
   top: 540px;
   left: 200px;
+}
+
+.afc_divisional_seed_1 {
+  position: absolute;
+  top: 135px;
+  left: 330px;
+}
+
+.afc_divisional_seed_2 {
+  position: absolute;
+  top: 225px;
+  left: 330px;
+}
+
+.afc_divisional_seed_3 {
+  position: absolute;
+  top: 360px;
+  left: 330px;
+}
+
+.afc_divisional_seed_4 {
+  position: absolute;
+  top: 450px;
+  left: 330px;
+}
+
+.afc_conference_seed_1 {
+  position: absolute;
+  top: 260px;
+  left: 460px;
+}
+
+.afc_conference_seed_2 {
+  position: absolute;
+  top: 350px;
+  left: 460px;
+}
+
+.afc_champion {
+  position: absolute;
+  top: 260px;
+  left: 665px;
 }
 
 .nfc_wildcard_seed_1 {
@@ -85,30 +151,6 @@
   left: 1150px;
 }
 
-.afc_divisional_seed_1 {
-  position: absolute;
-  top: 135px;
-  left: 330px;
-}
-
-.afc_divisional_seed_2 {
-  position: absolute;
-  top: 225px;
-  left: 330px;
-}
-
-.afc_divisional_seed_3 {
-  position: absolute;
-  top: 360px;
-  left: 330px;
-}
-
-.afc_divisional_seed_4 {
-  position: absolute;
-  top: 450px;
-  left: 330px;
-}
-
 .nfc_divisional_seed_1 {
   position: absolute;
   top: 135px;
@@ -133,18 +175,6 @@
   left: 1010px;
 }
 
-.afc_conference_seed_1 {
-  position: absolute;
-  top: 260px;
-  left: 460px;
-}
-
-.afc_conference_seed_2 {
-  position: absolute;
-  top: 350px;
-  left: 460px;
-}
-
 .nfc_conference_seed_1 {
   position: absolute;
   top: 260px;
@@ -157,19 +187,13 @@
   left: 870px;
 }
 
-.afc_champion {
-  position: absolute;
-  top: 260px;
-  left: 665px;
-}
-
 .nfc_champion {
   position: absolute;
   top: 350px;
   left: 665px;
 }
 
-.super_bowl_champion {
+.superbowl_champion {
   position: absolute;
   top: 475px;
   left: 628px;
@@ -177,31 +201,7 @@
   height: 150px;
 }
 
-.super_bowl_logo {
-  position: absolute;
-  top: 0px;
-  left: 560px;
-  width: 288px;
-  height: 213px
-}
-
-.team_champion_image {
+.team_champion {
   width: 150px;
   height: 150px;
-}
-
-.afc_logo {
-  position: absolute;
-  top: 275px;
-  left: 20px;
-  width: 120px;
-  height: 86px
-}
-
-.nfc_logo {
-  position: absolute;
-  top: 275px;
-  left: 1300px;
-  width: 122px;
-  height: 92px
 }
