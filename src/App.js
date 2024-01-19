@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css'
+import Bracket from './components/Bracket.js';
 import bills_logo from './assets/bills_logo.webp'
 import steelers_logo from './assets/steelers_logo.webp'
 import browns_logo from './assets/browns_logo.jpeg'
@@ -19,7 +19,6 @@ import afc_logo from './assets/afc_logo.png'
 import nfc_logo from './assets/nfc_logo.png'
 
 function App() {
-
   const getTeamImage = (bracket) => {
     const imageTag = bracket.querySelector('.team');
     const imageClone = imageTag.cloneNode(true);
@@ -181,9 +180,7 @@ function App() {
       <img src={afc_logo} className='afc_logo'></img>
       <img src={nfc_logo} className='nfc_logo'></img>
 
-      <div className="bracket afc_wildcard_seed_1" onClick={handleWildCardClick}>
-        <img src={bills_logo} className="team"></img>
-      </div>
+      <Bracket seed="bracket afc_wildcard_seed_1" image='bills_logo'/>
 
       <div className="bracket afc_wildcard_seed_2" onClick={handleWildCardClick}>
         <img src={steelers_logo} className="team"></img>
