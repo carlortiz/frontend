@@ -14,20 +14,101 @@ import packers_logo from '../assets/packers_logo.jpeg'
 import rams_logo from '../assets/rams_logo.png'
 import texans_logo from '../assets/texans_logo.avif'
 import ravens_logo from '../assets/ravens_logo.jpeg'
-import superbowl_logo from '../assets/superbowl_lvii.png'
-import afc_logo from '../assets/afc_logo.png'
-import nfc_logo from '../assets/nfc_logo.png'
 
 function Bracket(props) {
   const imageMap = {
     bills_logo: bills_logo,
     steelers_logo: steelers_logo,
     browns_logo: browns_logo,
+    buccaneers_logo: buccaneers_logo,
+    chiefs_logo: chiefs_logo,
+    cowboys_logo: cowboys_logo,
+    lions_logo: lions_logo,
+    dolphins_logo: dolphins_logo,
+    eagles_logo: eagles_logo,
+    niners_logo: niners_logo,
+    packers_logo: packers_logo,
+    rams_logo: rams_logo,
+    texans_logo: texans_logo,
+    ravens_logo: ravens_logo,
   }
+  
+  const imageURL = imageMap[props.image];
+
+  const handleClick = () => {
+    let newSeed;
+    let imageTag;
+    let newBracket;
+    
+    if (props.seed.includes("afc_divisional_seed_1"))
+      newSeed = "bracket afc_conference_seed_1";
+    if (props.seed.includes("afc_divisional_seed_2"))
+      newSeed = "bracket afc_conference_seed_1";
+    if (props.seed.includes("afc_divisional_seed_3"))
+      newSeed = "bracket afc_conference_seed_2";
+    if (props.seed.includes("afc_divisional_seed_4"))
+      newSeed = "bracket afc_conference_seed_2";
+    if (props.seed.includes("afc_conference_seed_1"))
+      newSeed = "bracket afc_champion";
+    if (props.seed.includes("afc_conference_seed_2"))
+      newSeed = "bracket afc_champion";
+    if (props.seed.includes("afc_champion"))
+      newSeed = "bracket superbowl_champion";
+
+    if (props.seed.includes("nfc_divisional_seed_1"))
+      newSeed = "bracket nfc_conference_seed_1";
+    if (props.seed.includes("nfc_divisional_seed_2"))
+      newSeed = "bracket nfc_conference_seed_1";
+    if (props.seed.includes("nfc_divisional_seed_3"))
+      newSeed = "bracket nfc_conference_seed_2";
+    if (props.seed.includes("nfc_divisional_seed_4"))
+      newSeed = "bracket nfc_conference_seed_2";
+    if (props.seed.includes("nfc_conference_seed_1"))
+      newSeed = "bracket nfc_champion";
+    if (props.seed.includes("nfc_conference_seed_2"))
+      newSeed = "bracket nfc_champion";
+    if (props.seed.includes("nfc_champion"))
+      newSeed = "bracket superbowl_champion";
+
+    if (props.seed.includes("afc_wildcard_seed_1") || 
+        props.seed.includes("afc_wildcard_seed_3"))
+    {
+      newSeed = "afc_divisional_seed_3";
+      newBracket = document.getElementsByClassName(newSeed);
+      if (newBracket[0].querySelector('img')) 
+        newSeed = "afc_divisional_seed_4";
+    }
+
+    // if we click on a bracket that did not originally have an image
+    if (!(imageURL)){
+      const clickedBracket = document.getElementsByClassName(props.seed);
+      const currentImage = clickedBracket[0].querySelector('img');
+      const imageClone = currentImage.cloneNode(true);
+      imageTag = imageClone;
+    } else {
+      imageTag = document.createElement('img')
+      imageTag.src = imageURL;
+      imageTag.className = "team";
+      imageTag.alt = "";
+    }
+
+    // if we click on the afc_champion or nfc_champion bracket
+    if (newSeed.includes("bracket superbowl_champion"))
+      imageTag.classList.add('team_champion');
+
+    // get the new bracket by seed
+    newBracket = document.getElementsByClassName(newSeed);
+
+    // if the new bracket does not already have an image
+    if (!(newBracket[0].querySelector('img')))
+      newBracket[0].appendChild(imageTag);
+  };
 
   return (
-    <div className={props.seed}>
-        <img src={imageMap[props.image]} className="team"></img>
+    <div>
+      <div className={props.seed} onClick={handleClick}>
+        {imageURL && <img src={imageURL} className="team" alt="" />}
+      </div>
     </div>
   );
 }
