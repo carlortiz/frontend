@@ -25,9 +25,6 @@ function App() {
       <Bracket seed="bracket afc_conference_seed_1"/>
       <Bracket seed="bracket afc_conference_seed_2"/>
       <Bracket seed="bracket afc_champion"/>
-      
-      <Bracket seed="bracket afc_conference_seed_2"/>
-      <Bracket seed="bracket afc_champion"/>
 
       <Bracket seed="bracket nfc_wildcard_seed_1" image='cowboys_logo'/>
       <Bracket seed="bracket nfc_wildcard_seed_2" image='packers_logo'/>

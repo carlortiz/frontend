@@ -32,14 +32,75 @@ function Bracket(props) {
     texans_logo: texans_logo,
     ravens_logo: ravens_logo,
   }
+
+  const fetchImageURL = () => {
+    if (props.image)
+      return imageMap[props.image];
+  }
+
+  const getImageTag = ( teamImage ) => {
+    if (props.image) {
+      // for brackets who DO have an image, this creates a new team image html tag
+      const newImageTag = document.createElement('img')
+      newImageTag.src = imageURL;
+      newImageTag.className = "team";
+      newImageTag.alt = "";
+      teamImage = newImageTag;
+    } else {
+      // for brackets who DO NOT have an image, this grabs an old team image html tag
+      const clickedBracket = document.getElementsByClassName(props.seed);
+      const clickedBracketImage = clickedBracket[0].querySelector('img');
+      const clickedBracketImageClone = clickedBracketImage.cloneNode(true);
+      teamImage = clickedBracketImageClone;
+    }
+
+    return teamImage;
+  }
   
-  const imageURL = imageMap[props.image];
+  const imageURL = fetchImageURL();
 
   const handleClick = () => {
     let newSeed;
-    let imageTag;
-    let newBracket;
+    let potentialNewBracket;
+    let teamImage;
     
+    if (props.seed.includes("afc_wildcard_seed_2"))
+      newSeed = "afc_divisional_seed_2";
+
+    if (props.seed.includes("afc_wildcard_seed_4")) {
+      newSeed = "afc_divisional_seed_2";
+
+      potentialNewBracket = document.getElementsByClassName(newSeed);
+      if (potentialNewBracket[0].querySelector('img'))
+        newSeed = "afc_divisional_seed_3";
+
+      potentialNewBracket = document.getElementsByClassName(newSeed);
+      if (potentialNewBracket[0].querySelector('img'))
+        newSeed = "afc_divisional_seed_4";
+    }
+
+    if (props.seed.includes("afc_wildcard_seed_1") ||
+        props.seed.includes("afc_wildcard_seed_3"))
+    {
+      newSeed = "afc_divisional_seed_3";
+      potentialNewBracket = document.getElementsByClassName(newSeed);
+      if (potentialNewBracket[0].querySelector('img'))
+        newSeed = "afc_divisional_seed_4";
+    }
+
+    if (props.seed.includes("afc_wildcard_seed_5") ||
+        props.seed.includes("afc_wildcard_seed_6")) {
+      newSeed = "afc_divisional_seed_3";
+
+      potentialNewBracket = document.getElementsByClassName(newSeed);
+      if (potentialNewBracket[0].querySelector('img'))
+        newSeed = "afc_divisional_seed_4";
+
+      potentialNewBracket = document.getElementsByClassName(newSeed);
+      if (potentialNewBracket[0].querySelector('img'))
+        newSeed = "afc_divisional_seed_2";
+    }
+
     if (props.seed.includes("afc_divisional_seed_1"))
       newSeed = "bracket afc_conference_seed_1";
     if (props.seed.includes("afc_divisional_seed_2"))
@@ -70,48 +131,63 @@ function Bracket(props) {
     if (props.seed.includes("nfc_champion"))
       newSeed = "bracket superbowl_champion";
 
-    if (props.seed.includes("afc_wildcard_seed_1") || 
-        props.seed.includes("afc_wildcard_seed_3"))
+    if (props.seed.includes("nfc_wildcard_seed_2"))
+      newSeed = "nfc_divisional_seed_2";
+
+    if (props.seed.includes("nfc_wildcard_seed_4")) {
+      newSeed = "nfc_divisional_seed_2";
+
+      potentialNewBracket = document.getElementsByClassName(newSeed);
+      if (potentialNewBracket[0].querySelector('img'))
+        newSeed = "nfc_divisional_seed_3";
+
+      potentialNewBracket = document.getElementsByClassName(newSeed);
+      if (potentialNewBracket[0].querySelector('img'))
+        newSeed = "nfc_divisional_seed_4";
+    }
+
+    if (props.seed.includes("nfc_wildcard_seed_1") ||
+        props.seed.includes("nfc_wildcard_seed_3"))
     {
-      newSeed = "afc_divisional_seed_3";
-      newBracket = document.getElementsByClassName(newSeed);
-      if (newBracket[0].querySelector('img')) 
-        newSeed = "afc_divisional_seed_4";
+      newSeed = "nfc_divisional_seed_3";
+      potentialNewBracket = document.getElementsByClassName(newSeed);
+      if (potentialNewBracket[0].querySelector('img'))
+        newSeed = "nfc_divisional_seed_4";
     }
 
-    // if we click on a bracket that did not originally have an image
-    if (!(imageURL)){
-      const clickedBracket = document.getElementsByClassName(props.seed);
-      const currentImage = clickedBracket[0].querySelector('img');
-      const imageClone = currentImage.cloneNode(true);
-      imageTag = imageClone;
-    } else {
-      imageTag = document.createElement('img')
-      imageTag.src = imageURL;
-      imageTag.className = "team";
-      imageTag.alt = "";
+    if (props.seed.includes("nfc_wildcard_seed_5") ||
+        props.seed.includes("nfc_wildcard_seed_6")) {
+      console.log(props.seed);
+      newSeed = "nfc_divisional_seed_3";
+
+      potentialNewBracket = document.getElementsByClassName(newSeed);
+      if (potentialNewBracket[0].querySelector('img'))
+        newSeed = "nfc_divisional_seed_4";
+
+      potentialNewBracket = document.getElementsByClassName(newSeed);
+      if (potentialNewBracket[0].querySelector('img'))
+        newSeed = "nfc_divisional_seed_2";
     }
 
-    // if we click on the afc_champion or nfc_champion bracket
-    if (newSeed.includes("bracket superbowl_champion"))
-      imageTag.classList.add('team_champion');
+    teamImage = getImageTag(teamImage);
 
-    // get the new bracket by seed
-    newBracket = document.getElementsByClassName(newSeed);
+    // gets the new bracket html by the new seed
+    const newBracket = document.getElementsByClassName(newSeed);
 
-    // if the new bracket does not already have an image
+    // adds class to special super bowl winner html
+    if (newSeed.includes("superbowl_champion"))
+      teamImage.classList.add('team_champion');
+
+    // appends the team image html tag
     if (!(newBracket[0].querySelector('img')))
-      newBracket[0].appendChild(imageTag);
+      newBracket[0].appendChild(teamImage);
   };
 
   return (
-    <div>
-      <div className={props.seed} onClick={handleClick}>
-        {imageURL && <img src={imageURL} className="team" alt="" />}
-      </div>
+    <div className={props.seed} onClick={handleClick}>
+      {props.image && <img src={imageURL} className="team" alt="" />}
     </div>
   );
 }
 
 export default Bracket;
-
